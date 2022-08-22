@@ -94,20 +94,16 @@ public class okno extends JFrame implements MouseMotionListener,MouseListener,Ac
     
     
 	@Override
-	public void mouseDragged(MouseEvent e) {
-		int xDrag = e.getX();
-	    int yDrag = e.getY();
-
-	    JFrame sFrame = (JFrame) e.getSource();
-	    sFrame.setLocation(sFrame.getLocation().x+xDrag-xPress, 
-	    sFrame.getLocation().y+yDrag-yPress);
+	public void mouseDragged(MouseEvent e) 
+	{
+		drag(e);
 		
 	}
 	@Override
-	public void mouseMoved(MouseEvent e) {
+	public void mouseMoved(MouseEvent e) 
+	{
 			xPress = e.getX();
 			yPress = e.getY();
-		
 	}
 
 	
@@ -118,14 +114,7 @@ public class okno extends JFrame implements MouseMotionListener,MouseListener,Ac
 	public void mouseClicked(MouseEvent e) {
 		if(e.getButton()==MouseEvent.BUTTON3)
 		{
-			//MyPanel.promien=100;
-			//this.setSize(210,210);
-			//panel.rep();
-			
-			menu.show(e.getComponent(),
-                    e.getX(), e.getY());
-			
-			
+			popup(e);
 		}
 		
 	}
@@ -194,9 +183,45 @@ public class okno extends JFrame implements MouseMotionListener,MouseListener,Ac
 			panel.kolory();
 		}
 		
+	
+	}
+	
+	public void popup(MouseEvent e)
+	{
+		menu.show(e.getComponent(),
+	    e.getX(), e.getY());
+	}
+	public void drag(MouseEvent e)
+	{
+		int xDrag = e.getX();
+	    int yDrag = e.getY();
+
+	    JFrame sFrame = (JFrame) e.getSource();
+	    sFrame.setLocation(sFrame.getLocation().x+xDrag-xPress, 
+	    sFrame.getLocation().y+yDrag-yPress);
 	}
 	
     
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     //---------------------BEZ UZYTKU JEZELI UNDECORATED---------------//
     
     /*public void miesiac()

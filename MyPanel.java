@@ -134,8 +134,13 @@ public class MyPanel extends JPanel implements ActionListener
     
     public void liniagodziny(Graphics g)
     {
-    	int x= (int) Math.round(xstart+Math.cos(kat)*(promien-55));
-        int y= (int) Math.round(ystart+Math.sin(kat)*(promien-55));
+    	int minus=55;
+    	if(promien<=50)
+    	{
+    		minus=promien-10;
+    	}
+    	int x= (int) Math.round(xstart+Math.cos(kat)*(promien-minus));
+        int y= (int) Math.round(ystart+Math.sin(kat)*(promien-minus));
         Graphics2D g2d=(Graphics2D) g;
         g2d.setColor(bialy);
         g2d.setStroke(new BasicStroke(7,BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
@@ -146,9 +151,13 @@ public class MyPanel extends JPanel implements ActionListener
     
     public void liniagodzinynachodzaca(Graphics g)
     {
-    	
-    	int x= (int) Math.round(xstart+Math.cos(kat)*(promien-70));
-        int y= (int) Math.round(ystart+Math.sin(kat)*(promien-70));
+    	int minus=70;
+    	if(promien<=75)
+    	{
+    		minus=promien-10;
+    	}
+    	int x= (int) Math.round(xstart+Math.cos(kat)*(promien-minus));
+        int y= (int) Math.round(ystart+Math.sin(kat)*(promien-minus));
         Graphics2D g2d=(Graphics2D) g;
         g2d.setStroke(new BasicStroke(2,BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
         g2d.setColor(czarny);
@@ -175,7 +184,7 @@ public class MyPanel extends JPanel implements ActionListener
     
     public void katgodzina(double czas)
     {
-    	kat=(double)czas*(0.01666666667)*0.52333+4.71;
+    	kat=(double)czas*(0.52333/60)+4.71;
     }
     
     
