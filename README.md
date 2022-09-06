@@ -2,7 +2,7 @@
 
 <br>Minimalistic analog clock widget.
 <br>right click opens a menu<br>
-                                   &nbsp   <br>"Zmniejsz wielkość"    -> Lower the size
+                                      <br>"Zmniejsz wielkość"    -> Lower the size
                                       <br>"Zwiększ wielkość"     -> Increase the size
                                       <br>"Odwróc kolory"        -> Reverse colors
                                       <br>"Zakończ"              -> Terminate
